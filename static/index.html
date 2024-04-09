@@ -1,16 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Форма выбора питомца</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<main>
-    <h1>Найди себе друга!</h1>
-
-    <!--Форму размещай тут-->
-
-</main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Форма выбора питомца</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <h1>Найди себе друга!</h1>
+            <form id="pets" action="/pets/orders" method="post" >
+                <label for="petType">
+                    Тип питомца
+                    <select id="petType" name="petType">
+                        <option value="cat"> Кошка</option>
+                        <option value="dog"> Собака</option>
+                        <option value="tiger"> Тигр</option>
+                    </select>
+                </label><br>
+                <label for="gender">
+                    Пол:<br>
+                    <label>
+                        <input type="radio" name="gender" value="boy" checked> Мальчик
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="girl"> Девочка
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="none"> Не важно
+                    </label>
+                </label><br>
+                <label for="eyeColor">
+                    Выберите желаемый цвет глаз<br>
+                    <input type="checkbox" name="eyeColor" value="#0000FF" checked> Голубой
+                    <input type="checkbox" name="eyeColor" value="#008000"> Зеленый
+                    <input type="checkbox" name="eyeColor" value="#808080"> Серый
+                    <input type="checkbox" name="eyeColor" value="#A52A2A">Карий
+                </label><br>
+                <input type="hidden" name="rules" value="true">
+                <label for="tailLength">
+                    Длина хвоста питомца<br>
+                    <input type="range" name="tailLength" id="tailLength" min="0" max="100" value="10">
+                </label><br>
+                <label for="name">
+                    Ваше имя
+                    <input type="text" name="name" id="name" placeholder="Введите имя" value="Ваше имя">
+                </label><br>
+                <label>
+                    Дата Рождения
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" value="2010-03-22">
+                </label><br>
+                <label for="phone">
+                    Номер телефона
+                    <input type="tel" name="phone" id="phone" required value="89124444444">
+                </label><br> 
+                <label for="email">
+                    Email
+                    <input type="email" name="email" id="email" required value="example@example.com">
+                </label><br>
+                <button type="submit" class="btn" name="submit">Отправить</button>
+                <button type="reset" class="btn" name="submit">Сброс</button>
+            </form>
+        </main>
+    </body>
 </html>
